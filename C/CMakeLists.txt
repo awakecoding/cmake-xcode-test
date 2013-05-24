@@ -5,7 +5,7 @@ set(MODULE_PREFIX "C")
 add_subdirectory(A)
 add_subdirectory(B)
 
-add_library(${MODULE_NAME} SHARED $<TARGET_OBJECTS:A> $<TARGET_OBJECTS:B>)
+add_library(${MODULE_NAME} SHARED dummy.c $<TARGET_OBJECTS:A> $<TARGET_OBJECTS:B>)
 
 set_target_properties(${MODULE_NAME} PROPERTIES LINKER_LANGUAGE C)
 set_target_properties(${MODULE_NAME} PROPERTIES PREFIX "lib")
